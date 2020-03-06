@@ -11,7 +11,7 @@ public class CreateConnection {
     	 
     	 try {
 			Class.forName("com.mysql.jdbc.Driver");
-			cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/temp_db","root","");
+			cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/alumni","root","");
 		} catch (ClassNotFoundException | SQLException e) {
 		
 			e.printStackTrace();
