@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.AllOperation;
 import DAO.AlumniOperation;
 import Model.User;
 
@@ -45,10 +46,22 @@ public class AlumniRegistration extends HttpServlet {
 	 int i=alumniOperation.adduser(u1);
 
 		if(i>0)
-		{
+		{   
+			
 			req.setAttribute("msg", "Registration Successfull");
 			RequestDispatcher rq=req.getRequestDispatcher("allogin.jsp");
 			rq.forward(req, resp);
+			
+			
+			
+			  String to = email;
+		        String subject ="Alumini Tracking System"; 
+		        String message = "Hello "+name+"\n You have successfully registered. \n Please Wait for Admin's Verification. \n\n  ";
+		        String user = "170510101048@paruluniversity.ac.in";
+		        String pass = "Pumis@48";
+		        AllOperation al=new AllOperation();
+		        al.send(to,subject, message, user, pass);
+		        
 		}
 		
 	}
