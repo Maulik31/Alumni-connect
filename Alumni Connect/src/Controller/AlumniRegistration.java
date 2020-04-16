@@ -48,19 +48,18 @@ public class AlumniRegistration extends HttpServlet {
 		if(i>0)
 		{   
 			
-			req.setAttribute("msg", "Registration Successfull");
+			req.setAttribute("error", "Registration Successfull.\n Wait for admin's verification");
 			RequestDispatcher rq=req.getRequestDispatcher("allogin.jsp");
 			rq.forward(req, resp);
 			
 			
 			
-			  String to = email;
+			    String to = email;
 		        String subject ="Alumini Tracking System"; 
 		        String message = "Hello "+name+"\n You have successfully registered. \n Please Wait for Admin's Verification. \n\n  ";
-		        String user = "170510101048@paruluniversity.ac.in";
-		        String pass = "Pumis@48";
+		        
 		        AllOperation al=new AllOperation();
-		        al.send(to,subject, message, user, pass);
+		        al.send(to,subject, message);
 		        
 		}
 		

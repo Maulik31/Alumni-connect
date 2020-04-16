@@ -3,9 +3,15 @@ package Model;
 public class User {
  int id;
  String name,enno,gender,dob,p_year,institute,course,email,password,mono;
+ Boolean status;
  
  
- 
+public Boolean getStatus() {
+	return status;
+}
+public void setStatus(Boolean status) {
+	this.status = status;
+}
 public String getMono() {
 	return mono;
 }

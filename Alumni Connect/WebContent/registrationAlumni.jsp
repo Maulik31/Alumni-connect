@@ -158,7 +158,7 @@
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="password">
+                                    <input class="input--style-5" type="password" name="password">
                                 </div>
                             </div>
                         </div> 

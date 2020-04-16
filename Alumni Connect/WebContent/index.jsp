@@ -22,7 +22,7 @@
         <div class="col-lg-12">
           <div class="banner_content text-center">
             <p class="text-uppercase">
-              Stay in Touch with @Seniors
+              Stay in Touch with @Alumni
             </p>
             <h2 class="text-uppercase mt-4 mb-5">
               Let's find new Way to learn
