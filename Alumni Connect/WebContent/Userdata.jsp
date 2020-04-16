@@ -19,7 +19,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>E-Serviceman |Client Profile</title>
+<title>Alumni |Alumni Profile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <meta name="author" content="http://webthemez.com" />
@@ -32,11 +32,7 @@
 <link href="DashCss/js/owl-carousel/owl.carousel.css" rel="stylesheet">
 <link href="DashCss/css/style.css" rel="stylesheet" />
  
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
+
     
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <script type="text/javascript">
@@ -105,10 +101,10 @@ font-size: 20px;
                 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4>Client Profile
-						<button style="font-size:15px;float: right"  class="btn btn-danger"><a href="allogin.jsp">Logout</a></button>
+						<h4>Alumni Profile
+						<button style="font-size:15px; float: right" ><a href="allogin.jsp">Logout</a></button>
 						
-						<button style="font-size:15px;float: right" class="btn btn-primary"><i class="fa fa-edit"></i><a href="update?action=update&email=${data.email}">Update</a></button>
+						<%-- <button style="font-size:15px;float: right" ><i class="fa fa-edit"></i><a href="update?action=update&email=${data.email}">Update</a></button> --%>
 						
 						</h4>
 						 
@@ -121,122 +117,11 @@ font-size: 20px;
 
 							<div class="box-body">
 							
-								  <%--  <c:if test="${cdata != null}"> 
-								   <form action="update" method="post">
-								   <div class="col-sm-6">
-									<div align="center">
-										<img alt="User Pic"
-											src="img/user/serviceMan/${cdata.clientImage}"
-											id="profile-image1" class="img-circle img-responsive"> 
 
-										<input id="profile-image-upload" class="hidden" type="file">
-										
-										<!--Upload Image Js And Css-->
-									</div>
-									<br>
-									</div>
+								 
+									<h4 align="right" style="color: #00b1b1;">WelCome , ${data.name}</h4>
 
-								<div class="col-sm-6">
-									<h4 style="color: #00b1b1;">WelCome , ${cdata.clientEmail}</h4>
-									<span><p>${cdata.serviceName}</p></span>
-								</div>
 								
-								<div class="clearfix"></div>
-								<hr style="margin: 5px 0 5px 0;">
-
-                                 <div class="col-sm-5 col-xs-6 tital "><b>Email ID:</b></div>
-								<div class="col-sm-7 col-xs-6 "><input type="text" name="emailid" value="${cdata.clientEmail}" readonly="readonly"></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								<div class="col-sm-5 col-xs-6 tital "><b>Name:</b></div>
-								<div class="col-sm-7 col-xs-6 "><input type="text" name="fname" value="${cdata.clientName}"></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>Address:</b></div>
-								<div class="col-sm-7 col-xs-6 "><input type="text" name="address" value="${cdata.address}"></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>City:</b></div>
-								<div class="col-sm-7 col-xs-6 ">
-								<select 
-									name="city" id="sel1">
-									 <option value="0">---Select City---</option> 
-									
-										<c:forEach var="c" items="${city1}">
-											<option value="${c.cid}">${c.cname}</option>
-										</c:forEach>
-
-								</select>
-								
-								</div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>Zip:</b></div>
-								<div class="col-sm-7 col-xs-6 "><input type="text" name="zip" value="${cdata.zip}"}></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>Phone Number:</b></div>
-								<div class="col-sm-7 col-xs-6 "><input type="text" name="phone" value="${cdata.clientPhone}"}></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>Password:</b></div>
-								<div class="col-sm-7 col-xs-6 "><input type="password" name= "password" value="${cdata.clientPassword}"}></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>Company:</b></div>
-								<div class="col-sm-7 col-xs-6 "><input type="text" name= "company" value="${cdata.clientCompany}"}></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>Service Name:</b></div>
-								<div class="col-sm-7 col-xs-6 ">
-								 <select 
-										name="service" id="sel1">
-										<option value="0">---Select Services---</option>
-										<c:forEach var="s" items="${service1}">
-											<option value="${s.sid}">${s.sname}</option>
-										</c:forEach>
-
-									</select>
-								
-								
-								</div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div align="center">
-								<td><input type="submit" method="post" align="center" class="btn btn-success"></td>
-					           	<td><input type="reset" align="center" class="btn btn-danger"></td>
-								
-								</div>
-								</form>
-								</c:if> --%>
-								
-							<%-- <c:if test="${cdata == null}"> --%>
-							<div class="col-sm-6">
-									<div align="center">
-										<img alt="User Pic"
-											<%-- src="img/serviceMan/${data.clientImage}" --%>
-											id="profile-image1" class="img-circle img-responsive"> 
-
-										<input id="profile-image-upload" class="hidden" type="file">
-										
-										<!--Upload Image Js And Css-->
-									</div>
-									<br>
-									</div>
-
-								  <div class="col-sm-6">
-									<h4 style="color: #00b1b1;">WelCome , ${data.email}</h4>
-									<span><p>${data.course}</p></span>
-								</div>
 							
 								
 								<div class="clearfix"></div>
@@ -269,7 +154,8 @@ font-size: 20px;
 								<div class="bot-border"></div>
 								
 								<div class="col-sm-5 col-xs-6 tital "><b>Course</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.course}</span></div>
+								<div class="col-sm-7 col-x
+								s-6 "><span>${data.course}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
@@ -286,19 +172,11 @@ font-size: 20px;
 								
 								
 								<div class="col-sm-5 col-xs-6 tital "><b>Password:</b></div>
-								<div class="col-sm-7 col-xs-6 "></span>*****</span></div>
+								<div class="col-sm-7 col-xs-6 "><span>********</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
-								
-								
-							
-							<%-- </c:if> --%>
-							
-								<!-- /.box-body -->
 							</div>
-							
-							<!-- /.box -->
 
 						</div>
 
@@ -308,12 +186,12 @@ font-size: 20px;
 			</div>
 	
 	 </div>
-<%-- 	<div class="container">
+ 	<div class="container">
 		 <div class="row">
 		 
 		 
               <div class="col-md-12 m-auto"> 
-              <h1 style="color: black" align="center">Your Orders</h1>
+              <h1 style="color: black" align="center">Students</h1>
 				<div class="table" style="overflow-x: auto;">
 				
 					<table class="table table-hover"> 
@@ -358,7 +236,7 @@ font-size: 20px;
          		</div>
 			</div>
 		</div>
-		</div> --%>
+		</div> 
 	
 			
 			<script>
