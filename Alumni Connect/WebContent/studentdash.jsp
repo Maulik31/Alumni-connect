@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <%
-           String email= (String)session.getAttribute("client");
+           String email= (String)session.getAttribute("student");
 			if(email == null)
 			{
 				request.setAttribute("error", "Please login first");
-				RequestDispatcher rd = request.getRequestDispatcher("allogin.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("slogin.jsp");
 				rd.forward(request, response);
 			}
 
@@ -19,7 +19,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Alumni Profile</title>
+<title>Student Profile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <meta name="author" content="http://webthemez.com" />
@@ -30,11 +30,11 @@
 <link href="DashCss/css/fancybox/jquery.fancybox.css" rel="stylesheet"> 
 <link href="DashCss/css/flexslider.css" rel="stylesheet" />
 <link href="DashCss/js/owl-carousel/owl.carousel.css" rel="stylesheet">
-<link href="DashCss/css/style.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
- 
- <style>
+<link href="DashCss/css/style.css" rel="stylesheet" />   
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
       * {
       box-sizing: border-box;
       }
@@ -112,10 +112,8 @@
       opacity: 1;
       }
     </style>
- 
- 
- 
- 
+
+
 <style>
 
 .img-circle {
@@ -176,8 +174,8 @@ font-size: 20px;
                 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 style="color: green">Alumni Profile
-						<button style="font-size:15px; float: right" ><a href="allogin.jsp">Logout</a></button>
+						<h4>Student Profile
+						<button style="font-size:15px; float: right" ><a href="slogin.jsp">Logout</a></button>
 						
 						<%-- <button style="font-size:15px;float: right" ><i class="fa fa-edit"></i><a href="update?action=update&email=${data.email}">Update</a></button> --%>
 						
@@ -194,7 +192,7 @@ font-size: 20px;
 							
 
 								 
-									<h4 align="right" style="color: #00b1b1;">WelCome , ${data.name}</h4>
+									<h4 align="right" style="color: #00b1b1;">WelCome , ${data.s_name}</h4>
 
 								
 							
@@ -203,53 +201,40 @@ font-size: 20px;
 								<hr style="margin: 5px 0 5px 0;">
 							
 								<div class="col-sm-5 col-xs-6 tital "><b>Name:</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.name}</span></div>
+								<div class="col-sm-7 col-xs-6 "><span>${data.s_name}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 						
 								
-								<div class="col-sm-5 col-xs-6 tital "><b>Enrollment No</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.enno}</span></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
 								<div class="col-sm-5 col-xs-6 tital "><b>Gender</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.gender}</span></div>
+								<div class="col-sm-7 col-xs-6 "><span>${data.s_gender}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
 								<div class="col-sm-5 col-xs-6 tital "><b>date of Birth</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.dob}</span></div>
+								<div class="col-sm-7 col-xs-6 "><span>${data.s_dob}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
 								<div class="col-sm-5 col-xs-6 tital "><b>Institute</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.institute}</span></div>
+								<div class="col-sm-7 col-xs-6 "><span>${data.s_institute}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
 								<div class="col-sm-5 col-xs-6 tital "><b>Course</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.course}</span></div>
+								<div class="col-sm-7 col-x
+								s-6 "><span>${data.s_course}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
-								<div class="col-sm-5 col-xs-6 tital "><b>Occupation</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.occupation}</span></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
 								
-								<div class="col-sm-5 col-xs-6 tital "><b>City</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.city}</span></div>
-								<div class="clearfix"></div>
-								<div class="bot-border"></div>
-								
-								<div class="col-sm-5 col-xs-6 tital "><b>PassOut</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.p_year}</span></div>
+								<div class="col-sm-5 col-xs-6 tital "><b>Email</b></div>
+								<div class="col-sm-7 col-xs-6 "><span>${data.s_email}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
 								<div class="col-sm-5 col-xs-6 tital "><b>Phone Number:</b></div>
-								<div class="col-sm-7 col-xs-6 "><span>${data.mono}</span></div>
+								<div class="col-sm-7 col-xs-6 "><span>${data.s_mobile}</span></div>
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
 								
@@ -274,43 +259,52 @@ font-size: 20px;
 		 
 		 
               <div class="col-md-12 m-auto"> 
-              <h1 style="color: yellow" align="center">Students</h1>
+              <h1 style="color: black" align="center">Alumnis</h1>
 				<div class="table" style="overflow-x: auto;">
 				
 					<table class="table table-hover"> 
 						 <thead class="thead-dark"> 
 							<tr>
-								<th scope="col">Id</th>
+								<th scope="col">ID</th>
 								<th scope="col">Name</th>
 								<th scope="col">Gender</th>
 								<th scope="col">Date of Birth</th>
 								<th scope="col">Institute</th>
 								<th scope="col">Course</th>
+								<th scope="col">Occupation</th>
+								<th scope="col">City</th>
 								<th scope="col">Mobile No</th>
 								<th scope="col">Email</th>
 								
+								
 								<!-- <th scope="col">ServiceRequested</th> -->
 								
-								<th scope="col" colspan="2">Action</th>
+								<th scope="col" colspan="2">Send Email</th>
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach var="data" items="${students}">
+						<c:forEach var="data" items="${alumni}">
 						<tr>
-						<td>${data.s_id}</td>
-						<td>${data.s_name}</td>
-						<td>${data.s_gender}</td>
-						<td>${data.s_dob}</td>
-						<td>${data.s_institute}</td>
-						<td>${data.s_course}</td>
-						<td>${data.s_mobile}</td>
-						<td>${data.s_email}</td>
-						<td> <button class="btn btn-info" onclick="openForm('${data.s_email}')"><strong>Send Mail</strong></button>
+						<td>${data.id}</td>
+						<td>${data.name}</td>
+						<td>${data.gender}</td>
+						<td>${data.dob}</td>
+						<td>${data.institute}</td>
+						<td>${data.course}</td>
+						<td>${data.occupation}</td>
+						<td>${data.city}</td>
+						<td>${data.mono}</td>
+						<td>${data.email}</td>
+						<td> <button class="btn btn-info" onclick="openForm('${data.email}')"><strong>Mail</strong></button>
 						
 					
+		
+						
 						
 						</td>
-							</tr>
+	
+					
+						</tr>
 						
 						</c:forEach>
 						<!-- </tbody> -->
@@ -323,6 +317,8 @@ font-size: 20px;
 		</div>
 		</div> 
 	
+			
+			
 	
 </div>
 	
@@ -331,7 +327,7 @@ font-size: 20px;
       function openForm(para) {
         document.getElementById("popupForm").style.display="block";
         document.getElementById("emailval").value=para;
-        document.getElementById("mailerid").value='${data.email}';
+        document.getElementById("mailerid").value='${data.s_email}';
       }
       
       function closeForm() {
@@ -339,11 +335,11 @@ font-size: 20px;
       }
     </script>
 	
-						<div class="login-popup">
+					<div class="login-popup">
       <div class="form-popup" id="popupForm">
-        <form action="alumnimail" method="post" class="form-container">
+        <form action="studentmail" method="post" class="form-container">
     
-        <h3>Give your Feedback</h3>
+       <h3>Send Email</h3>
           <label for="serviceId">
           <strong>Email Id</strong>
           </label>
@@ -363,42 +359,6 @@ font-size: 20px;
         </form>
       </div>
     </div>
-    
-    <h1 style="color: red" align="center">Events</h1>
-					<section id="content">
-	
-		    <div class="container">
-		      <div class="row">
-	      
-	<div class="skill-home"> 
-			<div class="skill-home-solid clearfix"> 
-	<%
-		CreateConnection con = new CreateConnection();
-		Connection cn = con.doConnection();
-		Statement st = cn.createStatement();
-		ResultSet rs = st.executeQuery("select * from event_master");
-		
-		while(rs.next())
-		{ %>	
-			
-			<div class="col-md-3 text-center" style=" margin-bottom: 2%;">
-			<div class="box"> 
-			<span class="icons c1"> </span> <div class="box-area">
-			<h3 style="color: purple"><%=rs.getString(2) %></h3>
-			 <h5><%=rs.getString(3) %></h5>
-			<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScti-QZKhbULkeUg2lqPM-uafFpOzIfJbpuXfTrvZv5cl5uVA/viewform?usp=sf_link">Ragister</a></p></div>
-			</div>
-			</div>	
-			
-		<% }
-	
-	%>
-	
-	</div>
-			</div>
-		</div>
-		    </div> 
-		    </section>	 		
 <jsp:include page="Footer.jsp"></jsp:include>	
 
 </body>

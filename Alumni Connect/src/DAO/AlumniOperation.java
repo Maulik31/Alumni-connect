@@ -25,7 +25,7 @@ public class AlumniOperation {
 	{
 		int i=0;
 		try {
-			PreparedStatement ps = cn.prepareStatement("insert into user_reg values(?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps = cn.prepareStatement("insert into user_reg values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setInt(1, 0);
 			ps.setString(2, u1.getName());
 			ps.setString(3,u1.getEnno());
@@ -34,10 +34,12 @@ public class AlumniOperation {
 			ps.setString(6,u1.getP_year());
 			ps.setString(7,u1.getInstitute());
 			ps.setString(8,u1.getCourse());
-			ps.setString(9,u1.getMono());
-			ps.setString(10,u1.getEmail());
-			ps.setString(11,u1.getPassword());
-			ps.setBoolean(12, false);
+			ps.setString(9,u1.getOccupation());
+			ps.setString(10,u1.getCity());
+			ps.setString(11,u1.getMono());
+			ps.setString(12,u1.getEmail());
+			ps.setString(13,u1.getPassword());
+			ps.setBoolean(14, false);
 			
 			
 			
@@ -72,10 +74,12 @@ public class AlumniOperation {
 							us.setP_year(rs.getString(6));
 							us.setInstitute(rs.getString(7));
 							us.setCourse(rs.getString(8));
-							us.setMono(rs.getBigDecimal(9).toString());
-							us.setEmail(rs.getString(10));
-							us.setPassword(rs.getString(11));
-							us.setStatus(rs.getBoolean(12));
+							us.setOccupation(rs.getString(9));
+							us.setCity(rs.getString(10));
+							us.setMono(rs.getString(11));
+							us.setEmail(rs.getString(12));
+							us.setPassword(rs.getString(13));
+							us.setStatus(rs.getBoolean(14));
 							
 							al.add(us);
 						}
@@ -110,8 +114,6 @@ public class AlumniOperation {
 						}
 						
 					}
-				System.out.println(b);
-				System.out.println("verification under Procces");	
 				
 		     	} 
 			catch (SQLException e) 
@@ -175,10 +177,12 @@ public class AlumniOperation {
 				us.setP_year(rs.getString(6));
 				us.setInstitute(rs.getString(7));
 				us.setCourse(rs.getString(8));
-				us.setMono(rs.getBigDecimal(9).toString());
-				us.setEmail(rs.getString(10));
-				us.setPassword(rs.getString(11));
-				us.setStatus(rs.getBoolean(12));
+				us.setOccupation(rs.getString(9));
+				us.setCity(rs.getString(10));
+				us.setMono(rs.getString(11));
+				us.setEmail(rs.getString(12));
+				us.setPassword(rs.getString(13));
+				us.setStatus(rs.getBoolean(14));
 			}
 		} 
 		catch (SQLException e) 
@@ -188,6 +192,48 @@ public class AlumniOperation {
 		}
 		
 		return us;
+	}
+	
+	public ArrayList<User> getAllUserbycourse(String course)
+	{
+		ArrayList<User> al =new ArrayList<>();
+		Statement st;
+		try {
+				st = cn.createStatement();
+				ResultSet rs = st.executeQuery("select * from user_reg where course='"+course+"' ");
+				while(rs.next())
+				{
+						 User us = new User();
+						
+				
+							us.setId(rs.getInt(1));
+							us.setName(rs.getString(2));
+							us.setEnno(rs.getString(3));
+							us.setGender(rs.getString(4));
+							us.setDob(rs.getString(5));
+							us.setP_year(rs.getString(6));
+							us.setInstitute(rs.getString(7));
+							us.setCourse(rs.getString(8));
+							us.setOccupation(rs.getString(9));
+							us.setCity(rs.getString(10));
+							us.setMono(rs.getString(11));
+							us.setEmail(rs.getString(12));
+							us.setPassword(rs.getString(13));
+							us.setStatus(rs.getBoolean(14));
+							
+							al.add(us);
+						}
+			     
+	    	}	
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
+		
+		
+		
+		
+		return al;
 	}
 	
 	

@@ -1,7 +1,7 @@
 package Controller;
 
 import java.io.IOException;
-import java.sql.Connection;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.AlumniOperation;
-
+import DAO.StudentOperation;
 import Model.User;
-import util.CreateConnection;
+import Model.student;
 
 @WebServlet("/alumnilogin")
 public class AlumniLogin extends HttpServlet {
@@ -28,6 +28,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		u1.setEmail(email);
 		u1.setPassword(pass);
 		
+		StudentOperation so= new StudentOperation(); 
 	    AlumniOperation ao=new AlumniOperation();
 	    boolean b = ao.checklogin(u1);
 	    
@@ -39,7 +40,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		session.setAttribute("client",email);
 			
 			User ul = ao.getDataById(email);
+			List<student> sd=so.getAllStudent();
 			req.setAttribute("data", ul);
+			req.setAttribute("students", sd);
 			rd=req.getRequestDispatcher("Userdata.jsp");
 			rd.forward(req, resp);
 	     	}

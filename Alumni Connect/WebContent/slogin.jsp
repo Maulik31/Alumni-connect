@@ -39,7 +39,7 @@
     	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="studentlogin" method="post">
 					<span class="login100-form-title">
 						Student Log In
 					</span>
@@ -69,7 +69,7 @@
 							Log In
 						</button>
 					</div>
-
+<h3 class="text-danger">${error}</h3>
 					<div class="flex-col-c p-t-170 p-b-40">
 						<span class="txt1 p-b-9">
 							Don’t have an account?

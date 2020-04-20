@@ -19,7 +19,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>E-Service - Service on one Click</title>
+  <title>Alumni</title>
 
   <!-- Bootstrap core CSS -->
   <link href="DashCss/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

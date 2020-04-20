@@ -28,6 +28,8 @@ public class AlumniRegistration extends HttpServlet {
 	 String mobileno =req.getParameter("mobileno");
 	 String email=req.getParameter("email");
 	 String password=req.getParameter("password");
+	 String occupation=req.getParameter("occupation");
+	 String city=req.getParameter("city");
 	 
 	 
 	 User u1=new User();
@@ -38,6 +40,8 @@ public class AlumniRegistration extends HttpServlet {
 	 u1.setGender(gn);
 	 u1.setInstitute(institute);
 	 u1.setCourse(course);
+	 u1.setOccupation(occupation);
+	 u1.setCity(city);
 	 u1.setMono(mobileno);
 	 u1.setEmail(email);
 	 u1.setPassword(password);

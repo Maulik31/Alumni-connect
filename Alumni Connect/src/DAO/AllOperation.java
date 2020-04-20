@@ -151,9 +151,34 @@ public class AllOperation {
 			e.printStackTrace();
 		}
 		return i;
-	
    }
-	
+   public void Mailsend(String from,String to, String sub, String msg) {
+
+		final String user="170510101048@paruluniversity.ac.in";
+		final String pass="Pumis@48";
+		Properties props = new Properties();
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(user, pass);
+			}
+		});
+		try {
+			MimeMessage message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(user));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+			message.setSubject(sub);
+			message.setText(msg+"/n From:"+from);
+
+			Transport.send(message);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
    
    

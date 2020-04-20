@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-	
+
+import Model.User;
 import Model.student;
 import util.CreateConnection;
 
@@ -18,6 +19,36 @@ public class StudentOperation {
 		con=new CreateConnection();
 		cn=con.doConnection();
 	}
+	
+	public Boolean checklogin(student s1) {
+		
+		boolean b=false;
+		try {
+			Statement st =cn.createStatement();
+			ResultSet rs=st.executeQuery("select * from student_master where s_email='"+s1.getS_email()+"' and s_password='"+s1.getS_password()+"'  ");
+			
+			while(rs.next())
+				{
+					int status = 1;
+					if(status>0)
+					{
+						b=true;
+					}
+					
+				}
+			
+	     	} 
+		catch (SQLException e) 
+		{
+			
+			e.printStackTrace();
+		}
+		return b;
+}
+	
+	
+	
+	
 	public ArrayList<student> getAllStudent()
 	{
 		ArrayList<student> al =new ArrayList<>();
@@ -56,7 +87,7 @@ public class StudentOperation {
 		student sd= null;
 		try {
 			Statement st =cn.createStatement();
-			ResultSet rs =st.executeQuery("select * from student_master where email='"+email+"'");
+			ResultSet rs =st.executeQuery("select * from student_master where s_email='"+email+"'");
 			
 			while(rs.next())
 			{  
@@ -89,11 +120,10 @@ public class StudentOperation {
 			 i=st.executeUpdate("delete from student_master where s_id='"+id+"'");
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	 return i;
-	}
+	} 
 
 	
 	

@@ -2,8 +2,20 @@ package Model;
 
 public class User {
  int id;
- String name,enno,gender,dob,p_year,institute,course,email,password,mono;
- Boolean status;
+ String name,enno,gender,dob,p_year,institute,course,email,password,mono,occupation,city;
+ public String getOccupation() {
+	return occupation;
+}
+public void setOccupation(String occupation) {
+	this.occupation = occupation;
+}
+public String getCity() {
+	return city;
+}
+public void setCity(String city) {
+	this.city = city;
+}
+Boolean status;
  
  
 public Boolean getStatus() {

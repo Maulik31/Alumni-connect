@@ -55,7 +55,7 @@
                             <div class="name">Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="name">
+                                    <input class="input--style-5" type="text" name="name"  required="required">
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                             <div class="name">Enrollment No</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="enno">
+                                    <input class="input--style-5" type="text" name="enno" pattern="[0-9]{12}" title="12 digit Enrolment no">
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                             <div class="name">Date of Birth</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" placeholder="DD/MM/YYYY" type="text" name="dob">
+                                    <input class="input--style-5" placeholder="DD/MM/YYYY" type="date" name="dob" min="1995-01-01" max="2000-01-01">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="value">
                                 <div class="input-group">
                                 <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="pyear">
+                                    <select name="pyear" required="required">
                                           <option disabled="disabled" selected="selected">Choose option</option>
                                           <option value="2015">2015</option>
                                           <option value="2016">2016</option>
@@ -116,12 +116,20 @@
                         </div>
 
                         
-                        
                         <div class="form-row">
                             <div class="name">Institute</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="institute">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="institute" required="required">
+                                          <option disabled="disabled" selected="selected">Choose option</option>
+                                          <option value="PICA">PICA</option>
+                                          <option value="PIET">PIET</option>
+                                          <option value="PIT">PIT</option>
+                                          <option value="PPI">PPI</option>
+                                           </select>
+                                    <div class="select-dropdown"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +138,36 @@
                             <div class="name">Course</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="course">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="course" required="required">
+                                          <option disabled="disabled" selected="selected">Choose option</option>
+                                          <option value="BCA">BCA</option>
+                                          <option value="MCA">MCA</option>
+                                          <option value="B.TECH">B.tech</option>
+                                          <option value="M.TECH">M.tech</option>
+                                           </select>
+                                    <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                 
+                        
+                        <div class="form-row">
+                            <div class="name">Occupation</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="occupation" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name">City</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="city" required="required">
                                 </div>
                             </div>
                         </div>
@@ -139,7 +176,8 @@
                             <div class="name">Mobile No</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mobileno">
+                                    <input class="input--style-5" type="number"  pattern="[0-9]{10}" 
+       title="Phone number with 10 digit" required="required" name="mobileno">
                                 </div>
                             </div>
                         </div> 
@@ -148,7 +186,7 @@
                             <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <input class="input--style-5" type="email" name="email" required="required">
                                 </div>
                             </div>
                         </div>
@@ -158,7 +196,7 @@
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="password" name="password">
+                                    <input class="input--style-5" type="password" name="password" required="required">
                                 </div>
                             </div>
                         </div> 
