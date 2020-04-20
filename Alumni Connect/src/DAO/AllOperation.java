@@ -23,8 +23,8 @@ public class AllOperation {
 
 	public void send(String to, String sub, String msg) {
 
-		final String user="170510101048@paruluniversity.ac.in";
-		final String pass="Pumis@48";
+		final String user="";  // Email id
+		final String pass="";  // Password
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "587");
@@ -154,8 +154,8 @@ public class AllOperation {
    }
    public void Mailsend(String from,String to, String sub, String msg) {
 
-		final String user="170510101048@paruluniversity.ac.in";
-		final String pass="Pumis@48";
+		final String user="";//email id
+		final String pass="";//PAssword
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "587");

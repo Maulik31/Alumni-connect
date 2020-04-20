@@ -386,7 +386,7 @@ font-size: 20px;
 			<span class="icons c1"> </span> <div class="box-area">
 			<h3 style="color: purple"><%=rs.getString(2) %></h3>
 			 <h5><%=rs.getString(3) %></h5>
-			<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScti-QZKhbULkeUg2lqPM-uafFpOzIfJbpuXfTrvZv5cl5uVA/viewform?usp=sf_link">Ragister</a></p></div>
+			<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScti-QZKhbULkeUg2lqPM-uafFpOzIfJbpuXfTrvZv5cl5uVA/viewform?usp=sf_link">Register</a></p></div>
 			</div>
 			</div>	
 			

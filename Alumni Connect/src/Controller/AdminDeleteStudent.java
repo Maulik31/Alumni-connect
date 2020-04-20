@@ -21,7 +21,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	 
 	 if(i>0)
 	 {
-		 RequestDispatcher rd = req.getRequestDispatcher("ViewStudentController");
+		 RequestDispatcher rd = req.getRequestDispatcher("ViewStudentsController");
 		 rd.forward(req, resp);
 	 }
 }
